@@ -1,0 +1,19 @@
+{
+  "name": "parity-run",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "parity-run": "./parity.js"
+  },
+  "scripts": {},
+  "author": "",
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "nanoeth": "^2.4.1",
+    "parity-binary": "^1.0.3",
+    "parity-spawn": "^1.0.0",
+    "pretty-ms": "^6.0.1"
+  },
+  "devDependencies": {}
+}
