@@ -53,8 +53,8 @@ async function start () {
 
   await new Promise((resolve) => {
     if (args.sync === false) return resolve()
-    const unlisten = eth.subscribe(eth.getBlockByNumber('latest'), function (block) {
-      console.log(arguments)
+    const unlisten = eth.subscribe(eth.getBlockByNumber('latest'), function (err, block) {
+      if (err) return
       const timestamp = parseInt(block.timestamp, 16) * 1000
       const delta = Date.now() - timestamp
       console.log('[sync] delta:', prettyMs(delta))
@@ -71,7 +71,8 @@ async function start () {
     await stop()
   }
 
-  async function stop () {
+  async function stop (ex) {
+    if (ex) console.log(ex)
     console.log('[parity] Stopping')
     eth.end()
     p.kill()
