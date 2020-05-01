@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "parity-run": "./parity.js"
+    "parity-run": "./exec.js"
   },
   "scripts": {},
   "author": "",
