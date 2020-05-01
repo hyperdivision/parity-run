@@ -59,7 +59,7 @@ async function start () {
       const delta = Date.now() - timestamp
       console.log('[sync] delta:', prettyMs(delta))
       if (delta < 1000 * 60 * 2) {
-        unlisten()
+        unlisten.then(fn => fn())
         resolve()
       }
     })
